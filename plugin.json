@@ -1,0 +1,69 @@
+{
+  "id": "track",
+  "name": "Track",
+  "description": "Activity history, measurements, and presets.",
+  "version": "1.0.0",
+  "platformApi": "^1.0.0",
+  "fieldSchemaApi": "^1.0.0",
+  "publisher": "taskasaur",
+  "license": "GPL-3.0-only",
+  "entrypoints": {
+    "browser": "browser.mjs"
+  },
+  "ui": {
+    "mode": "shared",
+    "apiVersion": "^1.0.0",
+    "surfaces": ["track"]
+  },
+  "storage": {
+    "local": {
+      "mode": "dexie",
+      "collections": ["track", "presets"]
+    }
+  },
+  "permissions": ["track.read", "track.write"],
+  "dependencies": [],
+  "features": {},
+  "sharedServices": [
+    {
+      "id": "core.records",
+      "version": "^1",
+      "optional": false
+    },
+    {
+      "id": "core.ui",
+      "version": "^1",
+      "optional": false
+    },
+    {
+      "id": "core.workspace",
+      "version": "^1",
+      "optional": false
+    },
+    {
+      "id": "core.sync",
+      "version": "^1",
+      "optional": false
+    },
+    {
+      "id": "core.storage.local",
+      "version": "^1",
+      "optional": false
+    }
+  ],
+  "provides": {
+    "commands": [
+      "track.list",
+      "track.put",
+      "track.delete",
+      "presets.list",
+      "presets.put",
+      "presets.delete"
+    ],
+    "events": ["track.changed", "presets.changed"]
+  },
+  "consumes": {
+    "commands": [],
+    "events": []
+  }
+}

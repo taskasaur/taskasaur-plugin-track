@@ -1,0 +1,115 @@
+[
+  {
+    "id": "track",
+    "pluginId": "track",
+    "name": "Track",
+    "version": 1,
+    "fields": [
+      {
+        "id": "title",
+        "label": "Activity",
+        "pgType": "text",
+        "required": true,
+        "nullable": false,
+        "array": false,
+        "sensitive": false
+      },
+      {
+        "id": "started_at",
+        "label": "Started",
+        "pgType": "timestamp with time zone",
+        "required": true,
+        "nullable": false,
+        "array": false,
+        "sensitive": false
+      },
+      {
+        "id": "ended_at",
+        "label": "Ended",
+        "pgType": "timestamp with time zone",
+        "required": false,
+        "nullable": true,
+        "array": false,
+        "sensitive": false
+      },
+      {
+        "id": "notes",
+        "label": "Notes",
+        "pgType": "text",
+        "required": false,
+        "nullable": true,
+        "array": false,
+        "control": "textarea",
+        "sensitive": false
+      },
+      {
+        "id": "measurement",
+        "label": "Measurement",
+        "pgType": "numeric",
+        "required": false,
+        "nullable": true,
+        "array": false,
+        "precision": 18,
+        "scale": 6,
+        "sensitive": false
+      },
+      {
+        "id": "unit",
+        "label": "Unit",
+        "pgType": "text",
+        "required": false,
+        "nullable": true,
+        "array": false,
+        "sensitive": false
+      },
+      {
+        "id": "task_id",
+        "label": "Task",
+        "pgType": "uuid",
+        "required": false,
+        "nullable": true,
+        "array": false,
+        "sensitive": false,
+        "reference": "tasks",
+        "control": "reference"
+      },
+      {
+        "id": "metadata",
+        "label": "Custom fields",
+        "pgType": "jsonb",
+        "required": false,
+        "nullable": true,
+        "array": false,
+        "default": {},
+        "sensitive": false
+      }
+    ]
+  },
+  {
+    "id": "presets",
+    "pluginId": "track",
+    "name": "Presets",
+    "version": 1,
+    "fields": [
+      {
+        "id": "name",
+        "label": "Name",
+        "pgType": "text",
+        "required": true,
+        "nullable": false,
+        "array": false,
+        "sensitive": false
+      },
+      {
+        "id": "values",
+        "label": "Preset values",
+        "pgType": "jsonb",
+        "required": false,
+        "nullable": true,
+        "array": false,
+        "default": {},
+        "sensitive": false
+      }
+    ]
+  }
+]
